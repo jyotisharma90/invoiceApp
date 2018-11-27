@@ -1,0 +1,35 @@
+.align-right{
+    text-align: right;
+    font-weight: 300;
+    color: #545151;
+    font-size: 2.3rem;
+}
+.padding-top-50{
+    padding-top: 50px;
+}
+.invoice-no{
+    padding-right: 0;
+    float:right;
+}
+#invoiceno{
+    position: relative;
+    padding-left: 3.25rem !important;
+}
+.custom-div{
+    position: absolute;
+    top:0;
+    padding:7px 20px;
+    background: #afabab;
+    border-radius: 5px 0 0 5px;
+}
+.text-align-center{
+    text-align: center;
+    background: #e4e0e0;
+    padding: 10px;
+}
+.text-align-center label{
+    margin-bottom:0 !important;
+}
+.error{
+    color:red;
+}

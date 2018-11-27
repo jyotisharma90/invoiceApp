@@ -1,20 +1,200 @@
-<!--The whole content below can be removed with the new code.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!!
-  </h1>
-  <img width="300" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxOS4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCAyNTAgMjUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyNTAgMjUwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQo8c3R5bGUgdHlwZT0idGV4dC9jc3MiPg0KCS5zdDB7ZmlsbDojREQwMDMxO30NCgkuc3Qxe2ZpbGw6I0MzMDAyRjt9DQoJLnN0MntmaWxsOiNGRkZGRkY7fQ0KPC9zdHlsZT4NCjxnPg0KCTxwb2x5Z29uIGNsYXNzPSJzdDAiIHBvaW50cz0iMTI1LDMwIDEyNSwzMCAxMjUsMzAgMzEuOSw2My4yIDQ2LjEsMTg2LjMgMTI1LDIzMCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAJIi8+DQoJPHBvbHlnb24gY2xhc3M9InN0MSIgcG9pbnRzPSIxMjUsMzAgMTI1LDUyLjIgMTI1LDUyLjEgMTI1LDE1My40IDEyNSwxNTMuNCAxMjUsMjMwIDEyNSwyMzAgMjAzLjksMTg2LjMgMjE4LjEsNjMuMiAxMjUsMzAgCSIvPg0KCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMjUsNTIuMUw2Ni44LDE4Mi42aDBoMjEuN2gwbDExLjctMjkuMmg0OS40bDExLjcsMjkuMmgwaDIxLjdoMEwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMUwxMjUsNTIuMQ0KCQlMMTI1LDUyLjF6IE0xNDIsMTM1LjRIMTA4bDE3LTQwLjlMMTQyLDEzNS40eiIvPg0KPC9nPg0KPC9zdmc+DQo=" />
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" href="https://angular.io/docs/ts/latest/tutorial/">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" href="http://angularjs.blogspot.ca/">Angular blog</a></h2>
-  </li>
-</ul>
 
+<div class="container">
+    <div class="row">
+      <div class="col-md-12 padding-top-50">
+          <h2 class="align-right">INVOICE</h2>
+      </div>
+      <div class="col-md-12">
+          <form class="invoice" [formGroup]="invoiceForm" (ngSubmit)="onSubmit()">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="form-group col-md-2 invoice-no">
+                          
+                          <input type="text" placeholder=" " formControlName="invoiceno" class="form-control" id="invoiceno">
+                          <div class="custom-div">#</div>
+                          <!-- <div class="error" *ngIf="!submitted">
+                            <div class="error" >Required</div>
+                          </div> -->
+                          <div *ngIf="submitted && f.invoiceno.errors" class="error">
+                              <div *ngIf="f.invoiceno.errors.required">Required</div>
+                          </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                  
+                      <div class="form-group col-md-8" style=" padding-left: 0;">
+                          
+                          <textarea  placeholder="Who is this invoice from?(required) " formControlName="fromTo" class="form-control" id="fromTo" rows="2"></textarea>
+                          <!-- <div class="error" *ngIf="!submitted">
+                            <div class="error">Required</div>
+                          </div> -->
+                          <div *ngIf="submitted && f.fromTo.errors" class="error">
+                              <div *ngIf="f.fromTo.errors.required">Required</div>
+                          </div>
+                     </div>
+                     <div class="form-group col-md-8"  style=" padding-left: 0;">
+                          
+                        <textarea  placeholder="Who is this invoice to?(required)" formControlName="billTo" class="form-control" id="billTo" rows="2"></textarea>
+                        <!-- <div class="error" *ngIf="!submitted">
+                          <div class="error">Required</div>
+                        </div> -->
+                        <div *ngIf="submitted && f.billTo.errors" class="error">
+                            <div *ngIf="f.billTo.errors.required">Required</div>
+                        </div>
+                   </div>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="col-md-12"style="text-align:right">
+                          <div class="row">
+                              <div class="col-md-4"></div>
+                              <div class="col-md-8">
+                                <div class="row">
+                                <div class="col-md-4"><label >Date</label></div>
+                                  <div class="form-group col-md-8" style=" padding-right: 0;">
+                                      <p-calendar name="date" id="date" styleClass="w-100" formControlName="date"
+                                      placeholder="Date" inputStyleClass="form-control" dateFormat="dd/mm/yy"></p-calendar>
+                                      <!-- <div class="error" *ngIf="!submitted">
+                                        <div class="error">Required</div>
+                                      </div> -->
+                                      <div *ngIf="submitted && f.date.errors" class="error">
+                                          <div *ngIf="f.date.errors.required">Required</div>
+                                      </div>
+                                </div>
+                              </div>
+                              </div>
+                            </div> 
+                        </div>
+                    
+                     <div class="col-md-12"style="text-align:right">
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-8">
+                              <div class="row">
+                              <div class="col-md-4"><label >Due Date</label></div>
+                                <div class="form-group col-md-8" style=" padding-right: 0;">
+                                    <p-calendar name="dueDate" id="dueDate" styleClass="w-100" formControlName="dueDate"
+                                    placeholder="Date" inputStyleClass="form-control" dateFormat="dd/mm/yy"></p-calendar>
+                                    <div *ngIf="submitted && f.dueDate.errors" class="error">
+                                        <div *ngIf="f.dueDate.errors.required">Required</div>
+                                    </div>
+                              </div>
+                            </div>
+                            </div>
+                          </div> 
+                      </div>
+                  <div class="col-md-12 text-align-center">
+                    <label class="">Balance Due <span>$0</span></label>
+                  </div>
+                  </div>
+              </div>
+            </form>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Quantity</th>
+                                <th>Rate</th>
+                                <th>Amount</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let field of fieldArray; let i = index">
+                                <td>
+                                    <input [(ngModel)]="field.item" class="form-control" type="text" name="{{field.item}}" placeholder="Description of service or product"/>
+                                </td>
+                                <td>
+                                    <input  [(ngModel)]="field.quantity" class="form-control" type="text" name="{{field.quantity}}"  (change)="changevalue(field)"/>
+                                </td>
+                                <td>
+                                    <input [(ngModel)]="field.rate" class="form-control" type="text" name="{{field.rate}}"  (change)="changevalue(field)"/>
+                                </td>
+                                <td *ngIf="field.total">
+                                    $ {{field.total}}
+                                </td>
+                                <td *ngIf="!field.total">
+                                    $ 0
+                                </td>
+                                <td >
+                                    <i class="fa fa-close" *ngIf="i > 0" (click)="deleteFieldValue(i)"></i>
+                                </td>
+                            </tr>
+                        
+                        </tbody>
+                    </table>
+                    <button class="btn btn-primary" type="button" (click)="addFieldValue()">+ Line Item</button>
+                </div>
+                <div class="col-md-12" style="text-align:right">
+                  <label *ngIf="!subtotal">Subtotal &nbsp; &nbsp; $ 0 </label>
+                  <label  *ngIf="subtotal">Subtotal &nbsp; &nbsp; $ {{subtotal}}</label>
+                  <div class="row">
+                  <div class="col-md-8"></div>
+                  <div class="col-md-4">
+                    <div class="row">
+                    <div class="col-md-4"><label >Tax</label></div>
+                      <div class="form-group col-md-8">
+                         
+                          <!-- <input type="text" placeholder=" " [(ngModel)]="tax" class="form-control" id="tax"> -->
+                          <select name="cars" [(ngModel)]="tax" class="form-control" (change)="caltax(tax)">
+                              <option value="5" selected>5%</option>
+                              <option value="10">10%</option>
+                              <option value="15">15%</option>
+                          </select>
+                          <!-- <div class="custom-div">#</div>
+                          <div class="error" *ngIf="invoiceForm.controls['invoiceno'].touched && invoiceForm.controls['invoiceno'].errors">
+                            <div class="error" [hidden]="!invoiceForm.controls['invoiceno'].errors.required">Required</div>
+                          </div> -->
+                    </div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+                <div class="col-md-12" style="text-align:right">
+                    <label *ngIf="!result">Total &nbsp; &nbsp; $ 0 </label>
+                    <label *ngIf="result">Total &nbsp; &nbsp; {{result}} </label>
+                    <div class="row">
+                    <div class="col-md-8"></div>
+                    <div class="col-md-4">
+                      <div class="row">
+                      <div class="col-md-4"><label >Amount Paid</label></div>
+                        <div class="form-group col-md-8">
+                            <input *ngIf = "!result" type="text" placeholder=" "  value="$ 0" class="form-control" id="amount-paid">
+                            <input *ngIf="result"  type="text" placeholder=" "  [(ngModel)]="result" class="form-control" id="amount-paid">
+                            <!-- <div class="custom-div">#</div>
+                            <div class="error" *ngIf="invoiceForm.controls['invoiceno'].touched && invoiceForm.controls['invoiceno'].errors">
+                              <div class="error" [hidden]="!invoiceForm.controls['invoiceno'].errors.required">Required</div>
+                            </div> -->
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                  </div>
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label class="labelClass" for="firstName">Notes</label>
+        
+                          <textarea  placeholder="Notes-any relevent information not already covered "  [(ngModel)]="notes" class="form-control" id="notes" rows="3" cols="30"></textarea>
+                          <!-- <div class="error" *ngIf="addOperators.controls['firstName'].touched && addOperators.controls['firstName'].errors">
+                            <div class="error" [hidden]="!addOperators.controls['firstName'].errors.pattern">Enter First Name</div>
+                          </div> -->
+                      
+                      </div>
+                      <div class="form-group">
+                          <label class="labelClass" for="firstName">Terms</label>
+        
+                          <textarea  placeholder="Terms & conditions - late fees payment methods,delivery schedule " [(ngModel)]="terms" class="form-control" id="terms" rows="3" cols="30"></textarea>
+                          <!-- <div class="error" *ngIf="addOperators.controls['firstName'].touched && addOperators.controls['firstName'].errors">
+                            <div class="error" [hidden]="!addOperators.controls['firstName'].errors.pattern">Enter First Name</div>
+                          </div> -->
+                      
+                      </div>
+                  </div>
+              </div>
+              <button class="btn btn-primary" type="submit" (click)="onSubmit()" >Print</button>
+            
+      </div>
+    </div>
+    
+    </div>
