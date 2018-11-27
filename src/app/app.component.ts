@@ -13,9 +13,10 @@ export class AppComponent implements OnInit{
   subtotal: any;
   total: number;
   title = 'app';
-  
+  terms:any;
+  notes:any;
   invoiceForm:FormGroup;
-  private fieldArray: Array<any> = [];
+  fieldArray: Array<any> = [];
   private newAttribute: any = {};
  
   constructor(private fb:FormBuilder){
